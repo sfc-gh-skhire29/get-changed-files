@@ -1,5 +1,5 @@
 name: 'Get Changed files'
-description: 'Returns files with extension .py, .sql, .txt that are changed on the next branch' 
+description: 'Returns files with extension .py, .sql, .txt, .yml that are changed on the next branch' 
 author: sarveshkhire
 
 inputs:
@@ -29,6 +29,9 @@ outputs:
   txt_changed:
     description: 'List of changed/added text files'
     value: ${{ steps.get-files.outputs.txt_changed_files }}
+  yml_changed:  
+    description: 'List of changed/added yml files'
+    value: ${{ steps.get-files.outputs.yml_changed_files }}
 
 runs:
   using: "composite"
